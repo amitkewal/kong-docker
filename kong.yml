@@ -7,16 +7,22 @@ services:
       - name: gists-route
         paths:
           - /gists
-  - name: server
+  - name: server2
     url: http://host.docker.internal:8002
     routes:
-      - name: hello-route
+      - name: server2-route
         paths:
-          - /hello
+          - /server2
+  - name: server1
+    url: http://host.docker.internal:3000
+    routes:
+      - name: server1-route
+        paths:
+          - /server1
 
 plugins:
   - name: rate-limiting
-    service: server
+    service: server1
     config:
       minute: 5
       policy: local

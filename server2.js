@@ -17,7 +17,7 @@ var http = require('http');
 var app = http.createServer(function(req,res){
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('charset', 'utf-8');
-    res.end(JSON.stringify({ number: 1 , name: 'John'}));
+    res.end(JSON.stringify({ number: 2 , Server: '2'}));
 });
   
 app.listen(8002);
